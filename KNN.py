@@ -2,23 +2,13 @@
 
 # Recall/PrecisionReference: https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html#sphx-glr-auto-examples-model-selection-plot-precision-recall-py
 
-import pandas as pd
-from sklearn.tree import DecisionTreeClassifier # Import Decision Tree Classifier
-from sklearn.model_selection import train_test_split # Import train_test_split function
-from sklearn import metrics #Import scikit-learn metrics module for accuracy calculation
-from sklearn.tree import export_graphviz
-import sklearn.externals
-from IPython.display import Image
-import pydotplus
+
 from sklearn import preprocessing
-from sklearn import svm
-from sklearn import tree
 
 from sklearn.metrics import accuracy_score
-from sklearn.metrics import f1_score
+
 from sklearn.metrics import classification_report, confusion_matrix
-from sklearn.neural_network import MLPClassifier
-from sklearn.ensemble import AdaBoostClassifier
+
 from sklearn.neighbors import KNeighborsClassifier
 
 from sklearn.model_selection import validation_curve
