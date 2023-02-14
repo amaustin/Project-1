@@ -1,15 +1,12 @@
-# This is a sample Python script.
+# Main script to run model assessments
+# All plots generated and model_results.txt (which contains performance data for each model on each dataset)
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 import DecisionTree as DTree
 import KNN as KN
 import Neural as NN
 import SVM as SV
 import BoostTree as BT
-import DataProcessing
 import pandas as pd
-from sklearn import linear_model
 from sklearn.preprocessing import StandardScaler
 
 
@@ -29,8 +26,6 @@ if __name__ == '__main__':
     features_1 = ['acousticness', 'danceability', 'duration_ms', 'energy', 'instrumentalness', 'key', 'liveness', 'loudness', 'mode', 'speechiness', 'tempo', 'time_signature', 'valence']
     X1 = data_set_1[features_1]
     Y1 = data_set_1.Popularity_Bins
-
-
 
     ### Second Data Set Loading ###
     # Binary class dataset (perfectly balanced)
@@ -58,9 +53,8 @@ if __name__ == '__main__':
     NN.Neural(X1, Y1, 'Dataset_Spotify')
     NN.Neural(X2, Y2, 'Dataset_Raisins')
 
-
     # #### SVM ####
-    #SV.SVM(X1, Y1, 'Dataset_Spotify')
-    #SV.SVM(X2, Y2, 'Dataset_Raisins')
+    SV.SVM(X1, Y1, 'Dataset_Spotify')
+    SV.SVM(X2, Y2, 'Dataset_Raisins')
 
     print('DUN')
