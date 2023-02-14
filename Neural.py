@@ -2,18 +2,6 @@
 
 # Recall/PrecisionReference: https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html#sphx-glr-auto-examples-model-selection-plot-precision-recall-py
 
-import pandas as pd
-from sklearn.tree import DecisionTreeClassifier # Import Decision Tree Classifier
-from sklearn.model_selection import train_test_split # Import train_test_split function
-from sklearn import metrics #Import scikit-learn metrics module for accuracy calculation
-from sklearn.tree import export_graphviz
-import sklearn.externals
-from IPython.display import Image
-import pydotplus
-from sklearn import preprocessing
-from sklearn import svm
-from sklearn import tree
-
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import f1_score
 
@@ -34,9 +22,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import warnings
-
-
-
 
 import time
 
@@ -72,8 +57,6 @@ def Neural(X, Y, dataset_name):
     NN_Basic.fit(X_train, y_train)
     predictions = NN_Basic.predict(X_test)
     print("Basic Model Classification Report: \n", classification_report(y_test, predictions))
-
-
 
     if dataset_name == 'Dataset_Spotify':
         learning_rate = .1
@@ -116,8 +99,6 @@ def Neural(X, Y, dataset_name):
     plt.ylabel("Score")
     plt.grid()
     plt.show()
-
-
 
     # Loss Curve: Basic Model vs Tuned Model
     plt.figure()
@@ -163,6 +144,5 @@ def Neural(X, Y, dataset_name):
         f.write('Time to Train: ' + str(time_train) + '\n')
         f.write('Time to Test: ' + str(time_test) + '\n \n')
         f.write(str(classification_report(y_test, predictions)) + '\n \n')
-
 
     return X,Y
